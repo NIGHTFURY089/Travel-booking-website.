@@ -3,32 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Sign Up - Travel Booking</title>
+    <title>Travel Booking</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
+        <h1>Travel Booking</h1>
+
+        <!-- Login / Sign Up Section -->
         <div class="form-box">
-            <h1>Login / Sign Up</h1>
-            <div class="button-box">
-                <button id="login-btn" onclick="showLogin()">Login</button>
-                <button id="signup-btn" onclick="showSignup()">Sign Up</button>
-            </div>
-            <form id="login-form" class="input-group">
-                <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Me</span>
-                <button type="submit" class="submit-btn">Login</button>
+            <h2>Login / Sign Up</h2>
+            <button id="login-btn" onclick="showLogin()">Login</button>
+            <button id="signup-btn" onclick="showSignup()">Sign Up</button>
+
+            <form id="login-form" style="display: none;" onsubmit="handleLogin(event)">
+                <input type="email" id="login-email" class="input-field" placeholder="Email" required>
+                <input type="password" id="login-password" class="input-field" placeholder="Password" required>
+                <button type="submit">Login</button>
             </form>
-            <form id="signup-form" class="input-group" style="display: none;">
-                <input type="text" class="input-field" placeholder="Username" required>
-                <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Password" required>
-                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Sign Up</button>
+
+            <form id="signup-form" style="display: none;" onsubmit="handleSignup(event)">
+                <input type="text" id="signup-username" class="input-field" placeholder="Username" required>
+                <input type="email" id="signup-email" class="input-field" placeholder="Email" required>
+                <input type="password" id="signup-password" class="input-field" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
+
+        <!-- Surprise Section -->
+        <div>
+            <button onclick="generateSurprise()">Generate Surprise</button>
+            <div id="destination"></div>
+            <div id="transport"></div>
+            <div id="stay"></div>
+        </div>
+
+        <!-- Booking Form Section -->
+        <form id="booking-form" onsubmit="handleSubmit(event)">
+            <input type="text" name="full-name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="destination" placeholder="Destination" required>
+            <input type="date" name="travel-date" required>
+            <input type="number" name="number-of-people" placeholder="Number of People" required>
+            <textarea name="special-requests" placeholder="Special Requests"></textarea>
+            <button type="submit">Book Now</button>
+        </form>
+
+        <div id="message"></div>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
