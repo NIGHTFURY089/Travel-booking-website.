@@ -7,38 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="image-gallery">
-            <img src="https://source.unsplash.com/600x400/?paris" alt="Paris">
-            <img src="https://source.unsplash.com/600x400/?newyork" alt="New York">
-            <img src="https://source.unsplash.com/600x400/?tokyo" alt="Tokyo">
-            <img src="https://source.unsplash.com/600x400/?london" alt="London">
-            <img src="https://source.unsplash.com/600x400/?rome" alt="Rome">
+    <div class="background-image">
+        <div class="overlay">
+            <h1>Travel Booking</h1>
+
+            <form id="booking-form" onsubmit="handleSubmit(event)">
+                <input type="text" name="full-name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="destination" placeholder="Destination" required>
+                <input type="date" name="travel-date" required>
+                <input type="number" name="number-of-people" placeholder="Number of People" required>
+                <textarea name="special-requests" placeholder="Special Requests"></textarea>
+                <button type="submit">Book Now</button>
+            </form>
+
+            <div id="message"></div>
         </div>
-
-        <h1>Travel Booking</h1>
-
-        <!-- Surprise Section -->
-        <div>
-            <button onclick="generateSurprise()">Generate Surprise</button>
-            <div id="destination"></div>
-            <div id="transport"></div>
-            <div id="stay"></div>
-        </div>
-
-        <!-- Booking Form Section -->
-        <form id="booking-form" onsubmit="handleSubmit(event)">
-            <input type="text" name="full-name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="destination" placeholder="Destination" required>
-            <input type="date" name="travel-date" required>
-            <input type="number" name="number-of-people" placeholder="Number of People" required>
-            <textarea name="special-requests" placeholder="Special Requests"></textarea>
-            <button type="submit">Book Now</button>
-        </form>
-
-        <div id="message"></div>
     </div>
+
+    <!-- Scrolling Images Section -->
+    <div class="image-gallery">
+        <img src="https://source.unsplash.com/1600x900/?mountains" alt="Mountains">
+        <img src="https://source.unsplash.com/1600x900/?lake" alt="Lake">
+        <img src="https://source.unsplash.com/1600x900/?beach" alt="Beach">
+        <img src="https://source.unsplash.com/1600x900/?forest" alt="Forest">
+        <img src="https://source.unsplash.com/1600x900/?city" alt="City">
+    </div>
+
+    <button id="surprise-btn" onclick="generateSurprise()" style="display: none;">Generate Surprise</button>
 
     <script src="scripts.js"></script>
 </body>
