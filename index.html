@@ -9,35 +9,45 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">
-            <a href="#">Travel Booking</a>
-        </div>
+        <div class="logo"><a href="#">Travel Booking</a></div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="dropdown">
-                <a href="#">Services</a>
-                <div class="dropdown-content">
-                    <a href="#flights">Book Flights</a>
-                    <a href="#hotels">Book Hotel/Resort</a>
-                </div>
-            </li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#flights">Flights</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#resorts">Resorts</a></li>
         </ul>
     </nav>
 
-    <!-- Section for flights booking -->
-    <section id="flights">
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Book Your Travel Now!</h1>
+        <p>Find the best flights, hotels, and resorts worldwide.</p>
+        <a href="#booking" class="cta-btn">Start Booking</a>
+    </div>
+
+    <!-- Flight Booking Section -->
+    <section id="flights" class="booking-section">
         <h2>Book Your Flight</h2>
-        <p>Select your flight and enjoy your journey.</p>
-        <!-- Add flight booking form here -->
+        <form id="booking-form" onsubmit="handleSubmit(event)">
+            <input type="text" name="full-name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="destination" placeholder="Destination" required>
+            <input type="date" name="travel-date" required>
+            <input type="number" name="number-of-people" placeholder="Number of People" required>
+            <button type="submit">Book Flight</button>
+        </form>
+        <div id="message"></div>
     </section>
 
-    <!-- Section for hotel/resort booking -->
-    <section id="hotels">
-        <h2>Book Your Hotel/Resort</h2>
-        <p>Choose the best stay for your vacation.</p>
-        <!-- Add hotel booking form here -->
+    <!-- Surprise Section -->
+    <section id="get-surprise">
+        <h2>Get a Surprise Trip</h2>
+        <p>Not sure where to go? Let us pick for you!</p>
+        <button onclick="generateSurprise()">Get Surprise Destination</button>
+        <div id="surprise-result">
+            <p id="destination"></p>
+            <p id="transport"></p>
+            <p id="stay"></p>
+        </div>
     </section>
 
     <script src="scripts.js"></script>
