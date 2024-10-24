@@ -1,3 +1,5 @@
+document.getElementById('get-surprise-btn').addEventListener('click', generateSurprise);
+
 function generateSurprise() {
     const destinations = ['Paris', 'New York', 'Tokyo', 'London', 'Rome'];
     const transports = ['Flight', 'Train', 'Car', 'Bus', 'Boat'];
@@ -7,44 +9,9 @@ function generateSurprise() {
     const randomTransport = transports[Math.floor(Math.random() * transports.length)];
     const randomAccommodation = accommodations[Math.floor(Math.random() * accommodations.length)];
 
-    document.getElementById('destination').innerHTML = `Destination: ${randomDestination}`;
-    document.getElementById('transport').innerHTML = `Mode of Transport: ${randomTransport}`;
-    document.getElementById('stay').innerHTML = `Accommodation: ${randomAccommodation}`;
-}
-
-// Show button when scrolling down
-window.onscroll = function() {
-    const button = document.getElementById('surprise-btn');
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        button.style.display = 'block'; // Show button
-    } else {
-        button.style.display = 'none'; // Hide button
-    }
-};
-
-function handleSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    const form = document.getElementById('booking-form');
-    const formData = new FormData(form);
-    const fullName = formData.get('full-name');
-    const email = formData.get('email');
-    const destination = formData.get('destination');
-    const travelDate = formData.get('travel-date');
-    const numberOfPeople = formData.get('number-of-people');
-    const specialRequests = formData.get('special-requests');
-
-    // Validate inputs
-    if (!fullName || !email || !destination || !travelDate || !numberOfPeople) {
-        alert('Please fill in all fields.');
-        return;
-    }
-
-    // Show success message
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerHTML = `Thank you, ${fullName}! Your booking for ${destination} on ${travelDate} for ${numberOfPeople} people has been received.`;
-    messageDiv.style.color = 'green';
-
-    // Optionally clear the form
-    form.reset();
+    document.getElementById('surprise-result').innerHTML = `
+        <span>Destination:</span> ${randomDestination} <br>
+        <span>Transport:</span> ${randomTransport} <br>
+        <span>Accommodation:</span> ${randomAccommodation}
+    `;
 }
