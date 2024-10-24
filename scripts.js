@@ -1,13 +1,3 @@
-function showLogin() {
-    document.getElementById('login-form').style.display = 'block';
-    document.getElementById('signup-form').style.display = 'none';
-}
-
-function showSignup() {
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('signup-form').style.display = 'block';
-}
-
 function generateSurprise() {
     const destinations = ['Paris', 'New York', 'Tokyo', 'London', 'Rome'];
     const transports = ['Flight', 'Train', 'Car', 'Bus', 'Boat'];
@@ -21,6 +11,16 @@ function generateSurprise() {
     document.getElementById('transport').innerHTML = `Mode of Transport: ${randomTransport}`;
     document.getElementById('stay').innerHTML = `Accommodation: ${randomAccommodation}`;
 }
+
+// Show button when scrolling down
+window.onscroll = function() {
+    const button = document.getElementById('surprise-btn');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        button.style.display = 'block'; // Show button
+    } else {
+        button.style.display = 'none'; // Hide button
+    }
+};
 
 function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission
