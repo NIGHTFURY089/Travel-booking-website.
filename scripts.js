@@ -1,4 +1,16 @@
-document.getElementById('get-surprise-btn').addEventListener('click', generateSurprise);
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('booking-form');
+    const formData = new FormData(form);
+    const fullName = formData.get('full-name');
+    const destination = formData.get('destination');
+    const travelDate = formData.get('travel-date');
+    const numberOfPeople = formData.get('number-of-people');
+
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerHTML = `Thank you, ${fullName}! Your booking to ${destination} on ${travelDate} for ${numberOfPeople} people has been received.`;
+}
 
 function generateSurprise() {
     const destinations = ['Paris', 'New York', 'Tokyo', 'London', 'Rome'];
@@ -9,9 +21,7 @@ function generateSurprise() {
     const randomTransport = transports[Math.floor(Math.random() * transports.length)];
     const randomAccommodation = accommodations[Math.floor(Math.random() * accommodations.length)];
 
-    document.getElementById('surprise-result').innerHTML = `
-        <span>Destination:</span> ${randomDestination} <br>
-        <span>Transport:</span> ${randomTransport} <br>
-        <span>Accommodation:</span> ${randomAccommodation}
-    `;
+    document.getElementById('destination').innerHTML = `Destination: ${randomDestination}`;
+    document.getElementById('transport').innerHTML = `Mode of Transport: ${randomTransport}`;
+    document.getElementById('stay').innerHTML = `Accommodation: ${randomAccommodation}`;
 }
