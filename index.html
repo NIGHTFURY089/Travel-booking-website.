@@ -10,26 +10,6 @@
     <div class="container">
         <h1>Travel Booking</h1>
 
-        <!-- Login / Sign Up Section -->
-        <div class="form-box">
-            <h2>Login / Sign Up</h2>
-            <button id="login-btn" onclick="showLogin()">Login</button>
-            <button id="signup-btn" onclick="showSignup()">Sign Up</button>
-
-            <form id="login-form" style="display: none;" onsubmit="handleLogin(event)">
-                <input type="email" id="login-email" class="input-field" placeholder="Email" required>
-                <input type="password" id="login-password" class="input-field" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-
-            <form id="signup-form" style="display: none;" onsubmit="handleSignup(event)">
-                <input type="text" id="signup-username" class="input-field" placeholder="Username" required>
-                <input type="email" id="signup-email" class="input-field" placeholder="Email" required>
-                <input type="password" id="signup-password" class="input-field" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-
         <!-- Surprise Section -->
         <div>
             <button onclick="generateSurprise()">Generate Surprise</button>
