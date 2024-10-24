@@ -7,34 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-image">
-        <div class="overlay">
-            <h1>Travel Booking</h1>
+    <header class="hero">
+        <h1>Welcome to Your Next Adventure</h1>
+        <p>Discover and book your dream vacation now</p>
+    </header>
 
-            <form id="booking-form" onsubmit="handleSubmit(event)">
-                <input type="text" name="full-name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="destination" placeholder="Destination" required>
-                <input type="date" name="travel-date" required>
-                <input type="number" name="number-of-people" placeholder="Number of People" required>
-                <textarea name="special-requests" placeholder="Special Requests"></textarea>
-                <button type="submit">Book Now</button>
-            </form>
-
-            <div id="message"></div>
+    <section class="destinations">
+        <h2>Top Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination">
+                <img src="images/mountains.jpg" alt="Mountains">
+                <h3>Mountains</h3>
+            </div>
+            <div class="destination">
+                <img src="images/lake.jpg" alt="Lake">
+                <h3>Lake</h3>
+            </div>
+            <div class="destination">
+                <img src="images/beach.jpg" alt="Beach">
+                <h3>Beach</h3>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Scrolling Images Section -->
-    <div class="image-gallery">
-        <img src="https://source.unsplash.com/1600x900/?mountains" alt="Mountains">
-        <img src="https://source.unsplash.com/1600x900/?lake" alt="Lake">
-        <img src="https://source.unsplash.com/1600x900/?beach" alt="Beach">
-        <img src="https://source.unsplash.com/1600x900/?forest" alt="Forest">
-        <img src="https://source.unsplash.com/1600x900/?city" alt="City">
-    </div>
-
-    <button id="surprise-btn" onclick="generateSurprise()" style="display: none;">Generate Surprise</button>
+    <section class="surprise-section">
+        <button id="get-surprise-btn">Get Surprise</button>
+        <div id="surprise-result" class="surprise-result"></div>
+    </section>
 
     <script src="scripts.js"></script>
 </body>
