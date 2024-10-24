@@ -1,4 +1,4 @@
-/* General Styles */
+/* Reset default browser styling */
 * {
     margin: 0;
     padding: 0;
@@ -8,82 +8,129 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Navbar Styles */
+/* Navbar Styling */
 .navbar {
-    background-color: #333;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #333;
+    padding: 20px;
 }
 
 .navbar .logo a {
     font-size: 1.5rem;
-    font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
-.nav-links {
-    list-style-type: none;
+.navbar .nav-links {
     display: flex;
+    list-style-type: none;
 }
 
-.nav-links li {
-    position: relative;
-    padding: 15px;
+.navbar .nav-links li {
+    padding: 0 20px;
 }
 
-.nav-links li a {
+.navbar .nav-links a {
     color: white;
-    padding: 10px 20px;
-    transition: background 0.3s;
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
-.nav-links li a:hover {
+.navbar .nav-links a:hover {
     background-color: #575757;
     border-radius: 5px;
 }
 
-/* Dropdown Menu */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 50px;
-    background-color: #444;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px 15px;
-    white-space: nowrap;
-}
-
-.dropdown-content a:hover {
-    background-color: #575757;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Section Styles */
-section {
-    padding: 60px;
+/* Hero Section */
+.hero {
+    background-image: url('images/hero.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     text-align: center;
 }
 
-#flights, #hotels {
-    padding: 50px;
+.hero h1 {
+    font-size: 4rem;
+}
+
+.hero p {
     margin: 20px 0;
-    background-color: #f4f4f4;
+}
+
+.cta-btn {
+    background-color: #f45d01;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-btn:hover {
+    background-color: #d14d01;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.booking-section h2 {
+    margin-bottom: 20px;
+}
+
+#booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#booking-form button {
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#booking-form button:hover {
+    background-color: #575757;
+}
+
+/* Surprise Section */
+#get-surprise {
+    padding: 50px;
+    text-align: center;
+}
+
+#get-surprise button {
+    padding: 15px 30px;
+    background-color: #f45d01;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#get-surprise button:hover {
+    background-color: #d14d01;
+}
+
+#surprise-result {
+    margin-top: 20px;
+    font-size: 1.2rem;
 }
