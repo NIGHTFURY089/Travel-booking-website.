@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,79 +7,83 @@
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.hero {
-    background-image: url('images/hero-bg.jpg');
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    color: white;
-    text-align: center;
 }
 
-.hero h1 {
-    font-size: 4rem;
-}
-
-.hero p {
+.navbar .logo a {
     font-size: 1.5rem;
-}
-
-.destinations {
-    padding: 50px;
-    text-align: center;
-}
-
-.destinations h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.destination-grid {
-    display: flex;
-    justify-content: space-around;
-}
-
-.destination {
-    width: 30%;
-    text-align: center;
-}
-
-.destination img {
-    width: 100%;
-    height: auto;
-}
-
-.surprise-section {
-    padding: 50px;
-    text-align: center;
-}
-
-#surprise-result {
-    margin-top: 20px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-#surprise-result span {
     font-weight: bold;
-}
-
-button {
-    padding: 15px 30px;
-    background-color: #007BFF;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+    padding: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Section Styles */
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+#flights, #hotels {
+    padding: 50px;
+    margin: 20px 0;
+    background-color: #f4f4f4;
 }
