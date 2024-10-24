@@ -7,32 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
-        <h1>Welcome to Your Next Adventure</h1>
-        <p>Discover and book your dream vacation now</p>
-    </header>
-
-    <section class="destinations">
-        <h2>Top Destinations</h2>
-        <div class="destination-grid">
-            <div class="destination">
-                <img src="images/mountains.jpg" alt="Mountains">
-                <h3>Mountains</h3>
-            </div>
-            <div class="destination">
-                <img src="images/lake.jpg" alt="Lake">
-                <h3>Lake</h3>
-            </div>
-            <div class="destination">
-                <img src="images/beach.jpg" alt="Beach">
-                <h3>Beach</h3>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Travel Booking</a>
         </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#flights">Book Flights</a>
+                    <a href="#hotels">Book Hotel/Resort</a>
+                </div>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section for flights booking -->
+    <section id="flights">
+        <h2>Book Your Flight</h2>
+        <p>Select your flight and enjoy your journey.</p>
+        <!-- Add flight booking form here -->
     </section>
 
-    <section class="surprise-section">
-        <button id="get-surprise-btn">Get Surprise</button>
-        <div id="surprise-result" class="surprise-result"></div>
+    <!-- Section for hotel/resort booking -->
+    <section id="hotels">
+        <h2>Book Your Hotel/Resort</h2>
+        <p>Choose the best stay for your vacation.</p>
+        <!-- Add hotel booking form here -->
     </section>
 
     <script src="scripts.js"></script>
