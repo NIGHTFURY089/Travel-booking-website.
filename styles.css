@@ -22,7 +22,7 @@ body {
 
 .navbar .logo a {
     font-size: 1.5rem;
-    color: white;
+    color: orange;
     text-decoration: none;
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .navbar .nav-links a {
-    color: white;
+    color: orange;
     text-decoration: none;
     padding: 10px 15px;
 }
